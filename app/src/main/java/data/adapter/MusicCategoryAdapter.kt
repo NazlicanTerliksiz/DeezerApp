@@ -1,11 +1,11 @@
-package com.nazlicanterliksiz.adapter
+package data.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nazlicanterliksiz.deezerapp.databinding.MusicCategoryCardBinding
-import com.nazlicanterliksiz.deezerapp.model.Data
-import com.nazlicanterliksiz.deezerapp.model.MusicCategoryModel
+import data.model.Categories
+import data.model.MusicCategoryModel
 import com.squareup.picasso.Picasso
 
 
@@ -19,10 +19,10 @@ class MusicCategoryAdapter(private val musicCategoryList: MusicCategoryModel, va
                 onItemClickListener.invoke()
             }
         }
-        fun bind(movie: Data) {
+        fun bind(category: Categories) {
             binding.apply {
-                movieNameText.text = movie.name
-                Picasso.get().load(movie.picture).into(movieImageView)
+                movieNameText.text = category.name
+                Picasso.get().load(category.picture).into(movieImageView)
             }
         }
     }

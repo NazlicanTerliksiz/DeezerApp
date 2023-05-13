@@ -1,4 +1,4 @@
-package com.nazlicanterliksiz.deezerapp.overview
+package ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

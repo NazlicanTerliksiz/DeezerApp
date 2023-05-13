@@ -1,6 +1,6 @@
-package com.nazlicanterliksiz.deezerapp.model
+package data.model
 
-data class Data(
+data class Artists(
     val id: Int,
     val name: String,
     val picture: String,
@@ -8,5 +8,7 @@ data class Data(
     val picture_medium: String,
     val picture_small: String,
     val picture_xl: String,
+    val radio: Boolean,
+    val tracklist: String,
     val type: String
 )
