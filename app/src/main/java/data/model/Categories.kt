@@ -1,12 +1,18 @@
 package data.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Categories(
     val id: Int,
     val name: String,
     val picture: String,
-    val picture_big: String,
-    val picture_medium: String,
-    val picture_small: String,
-    val picture_xl: String,
+    @SerializedName("picture_big")
+    val pictureBig: String,
+    @SerializedName("picture_medium")
+    val pictureMedium: String,
+    @SerializedName("picture_small")
+    val pictureSmall: String,
+    @SerializedName("picture_xl")
+    val pictureXl: String,
     val type: String
 )

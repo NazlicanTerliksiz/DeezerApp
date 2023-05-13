@@ -8,7 +8,7 @@
     tools:context="ui.MusicCategoryFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/movieRV"
+        android:id="@+id/musicCategoryRV"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"

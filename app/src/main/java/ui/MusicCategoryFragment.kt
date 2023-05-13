@@ -32,7 +32,7 @@ class MusicCategoryFragment : Fragment() {
 
     private fun observe(){
         viewModel.musicCategoryModel.observe(viewLifecycleOwner){
-            binding.movieRV.adapter = MusicCategoryAdapter(it){
+            binding.musicCategoryRV.adapter = MusicCategoryAdapter(it){
 
             }
 

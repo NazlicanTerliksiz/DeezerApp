@@ -4,28 +4,25 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.nazlicanterliksiz.deezerapp.service.ArtistApi
 import data.model.ArtistModel
+import data.model.MusicCategoryModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import repo.ArtistRepository
+import repo.MusicCategoryRepository
 
 class ArtistViewModel {
-    private var job: Job? = null
 
-    private val _artist = MutableLiveData<ArtistModel>()
-    val artist: LiveData<ArtistModel>
-        get() = _artist
+    private val artistRepo = ArtistRepository()
+    var musicArtistModel = MutableLiveData<ArtistModel>()
 
-    fun getArtist() {
-        job = CoroutineScope(Dispatchers.IO).launch {
-            val response = ArtistApi.retrofitArtistService.getArtist(id = 132)
-            if (response.isSuccessful) {
-                response.body()?.let {artistModel ->
-                    println("deneme $artistModel")
-                    _artist.postValue(artistModel)
-                }
-            }
-        }
+    init {
+        getCategoryFromRepo()
+        musicArtistModel = artistRepo.getArtist()
     }
 
+    private fun getCategoryFromRepo(){
+        artistRepo.getCategoryArtist()
+    }
 }
