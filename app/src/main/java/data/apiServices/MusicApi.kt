@@ -6,6 +6,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Headers
 import retrofit2.http.Path
 
 private const val BASE_URL = "https://api.deezer.com/"
@@ -20,7 +21,12 @@ interface MusicApiService{
     suspend fun getCategory(): Response<MusicCategoryModel>
 
     @GET("{genre_id}/artists")
-    suspend fun getArtist(@Path("id") id: Int): Response<ArtistModel>
+    @Headers(
+        "No-Locality: true"
+    )
+    suspend fun getArtist(
+        @Path("id") categoryId: String? = ""
+    ): Response<ArtistModel>
 }
 
 object MusicCategoryApi {

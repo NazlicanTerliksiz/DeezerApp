@@ -19,6 +19,7 @@ class MusicCategoryAdapter(private val musicCategoryList: MusicCategoryModel, va
                 onItemClickListener.invoke()
             }
         }
+
         fun bind(category: Categories) {
             binding.apply {
                 movieNameText.text = category.name

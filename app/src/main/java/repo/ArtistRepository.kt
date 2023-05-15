@@ -20,7 +20,7 @@ class ArtistRepository {
 
     fun getCategoryArtist() {
         job = CoroutineScope(Dispatchers.IO).launch {
-            val response = ArtistApi.retrofitArtistService.getArtist(id = 132)
+            val response = ArtistApi.retrofitArtistService.getArtist(categoryId = "")
             if (response.isSuccessful) {
                 response.body()?.let {artistModel ->
                     println("deneme $artistModel")

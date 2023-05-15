@@ -3,11 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homepageFragment">
-
+    app:startDestination="@id/musicCategoryFragment">
     <fragment
-        android:id="@+id/homepageFragment"
+        android:id="@+id/musicCategoryFragment"
         android:name="ui.MusicCategoryFragment"
-        android:label="fragment_home_page"
-        tools:layout="@layout/fragment_music_category" />
+        android:label="fragment_music_category"
+        tools:layout="@layout/fragment_music_category" >
+        <action
+            android:id="@+id/action_musicCategoryFragment_to_artistFragment2"
+            app:destination="@id/artistFragment2" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/artistFragment2"
+        android:name="ui.ArtistFragment"
+        android:label="fragment_artist"
+        tools:layout="@layout/fragment_artist" >
+        <argument
+            android:name="categoryId"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+
 </navigation>
